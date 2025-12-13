@@ -1,2 +1,392 @@
-# ZN-site
-Bola
+DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>zepas Metal| O Seu Projeto em Aço</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --cor-primaria: #2c3e50; /* Cinzento Escuro / Azul Noite (Moderno) */
+            --cor-acento: #3498db; /* Azul Brilhante (Destaque) */
+            --cor-fundo-claro: #ecf0f1; /* Cinzento Claro */
+            --cor-texto-claro: #ffffff;
+            --cor-texto-escuro: #333333;
+        }
+
+        /* Reset Básico e Tipografia */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: var(--cor-texto-escuro);
+            background-color: var(--cor-fundo-claro);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        h1, h2, h3 {
+            font-weight: 700;
+            color: var(--cor-primaria);
+            margin-bottom: 20px;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--cor-acento);
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: #2980b9;
+        }
+
+        /* 🌟 Botão de Ação (CTA) */
+        .btn {
+            display: inline-block;
+            background-color: var(--cor-acento);
+            color: var(--cor-texto-claro);
+            padding: 12px 25px;
+            border-radius: 5px;
+            text-transform: uppercase;
+            font-weight: 600;
+            transition: background-color 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #2980b9;
+        }
+
+        /* 🔨 Cabeçalho/Navegação Fixa */
+        header {
+            background: var(--cor-primaria);
+            padding: 15px 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: var(--cor-texto-claro);
+            margin: 0;
+            font-size: 24px;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 25px;
+        }
+
+        nav a {
+            color: var(--cor-texto-claro);
+            text-transform: uppercase;
+            font-size: 14px;
+            opacity: 0.8;
+        }
+
+        nav a:hover {
+            opacity: 1;
+            color: var(--cor-acento);
+        }
+
+        /* 🖼️ Secção HERO (Visual Impacto) */
+        #hero {
+            background: linear-gradient(rgba(44, 62, 80, 0.7), rgba(44, 62, 80, 0.7)), url('fundo_metal.jpg') center/cover no-repeat;
+            min-height: 450px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: var(--cor-texto-claro);
+        }
+        /* Nota: Substitua 'fundo_metal.jpg' por uma imagem sua ou retire-a */
+
+        #hero h2 {
+            font-size: 50px;
+            margin-bottom: 10px;
+            color: var(--cor-texto-claro);
+        }
+
+        #hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+
+        /* ⚙️ Secção de Serviços (Grid Moderno) */
+        section {
+            padding: 60px 0;
+        }
+
+        .servicos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .servico-item {
+            background: var(--cor-texto-claro);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .servico-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* 📸 Secção Galeria */
+        #galeria {
+             text-align: center;
+             background-color: var(--cor-fundo-claro);
+        }
+
+        .galeria-preview {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .galeria-preview img {
+            width: 30%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        /* Nota: Adicionar imagens reais aqui (e.g., nome-1.jpg, nome-2.jpg) */
+        
+        /* 📞 Secção Contacto/Rodapé */
+        #contactos {
+            background: var(--cor-primaria);
+            color: var(--cor-texto-claro);
+            padding: 60px 0 20px 0;
+            text-align: center;
+        }
+
+        #contactos h3 {
+            color: var(--cor-texto-claro);
+        }
+
+        .contact-content {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-start;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .contact-info, .contact-form-box {
+            width: 45%; 
+            min-width: 300px;
+            margin: 15px;
+            text-align: left;
+        }
+        
+        /* Formulário */
+        .contact-form-box input,
+        .contact-form-box textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: none;
+            border-radius: 5px;
+            box-sizing: border-box; 
+            font-family: inherit;
+        }
+
+        .contact-form-box textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .copyright {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 14px;
+        }
+        
+        /* Media Query para Telemóveis */
+        @media (max-width: 768px) {
+            header .container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul {
+                padding-top: 10px;
+                justify-content: center;
+            }
+
+            nav ul li {
+                margin: 0 10px;
+            }
+
+            #hero h2 {
+                font-size: 35px;
+            }
+            
+            .contact-info, .contact-form-box {
+                width: 100%;
+            }
+            
+            .galeria-preview {
+                flex-direction: column;
+            }
+            
+            .galeria-preview img {
+                width: 100%;
+                height: auto;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>Metal Forte Serralharia</h1>
+            <nav>
+                <ul>
+                    <li><a href="#servicos">Serviços</a></li>
+                    <li><a href="#galeria">Projetos</a></li>
+                    <li><a href="#vantagens">Vantagens</a></li>
+                    <li><a href="#contactos">Contactos</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="hero">
+        <div class="container">
+            <h2>Arte e Segurança em Metal</h2>
+            <p>Especialistas em portões automáticos, estruturas personalizadas e grades de alta segurança. Qualidade e prazo garantidos.</p>
+            <a href="#orcamento" class="btn">Solicite o seu Orçamento</a>
+        </div>
+    </section>
+
+    <section id="servicos">
+        <div class="container">
+            <h2 style="text-align: center;">O Que Fazemos de Melhor</h2>
+            <div class="servicos-grid">
+                
+                <div class="servico-item">
+                    <h3>Portões e Vedações</h3>
+                    <p>Fabricamos e instalamos portões seccionados, de correr e de batente, com opções de automatização e design moderno.</p>
+                </div>
+                
+                <div class="servico-item">
+                    <h3>Estruturas Metálicas</h3>
+                    <p>Construção de telheiros, escadas de emergência, mezanines e outras estruturas robustas para uso industrial ou residencial.</p>
+                </div>
+                
+                <div class="servico-item">
+                    <h3>Grades de Segurança</h3>
+                    <p>Soluções de alta segurança para janelas, varandas e portas, aliando proteção máxima a um visual elegante e discreto.</p>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    
+    <section id="vantagens" style="background-color: var(--cor-texto-claro); text-align: center;">
+        <div class="container">
+            <h2>Porquê Escolher a Metal Forte?</h2>
+            <p style="font-style: italic; color: #777;">O nosso compromisso com a qualidade e o cliente.</p>
+            <div class="servicos-grid">
+                <div class="servico-item" style="box-shadow: none;">
+                    <h3>Design Personalizado</h3>
+                    <p>Desenvolvemos projetos à medida, seguindo o seu estilo e as suas necessidades de espaço.</p>
+                </div>
+                <div class="servico-item" style="box-shadow: none;">
+                    <h3>Material de Alta Qualidade</h3>
+                    <p>Utilizamos aço, ferro forjado e alumínio premium para garantir durabilidade e resistência.</p>
+                </div>
+                <div class="servico-item" style="box-shadow: none;">
+                    <h3>Entrega no Prazo</h3>
+                    <p>A nossa equipa garante a instalação eficiente e o cumprimento rigoroso dos prazos acordados.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="galeria">
+        <div class="container">
+            <h2>Os Nossos Projetos</h2>
+            <p>Veja a qualidade e o detalhe dos nossos trabalhos recentes.</p>
+            <div class="galeria-preview">
+                <img src="Porton.jpg" alt="Exemplo de Portão Moderno">
+                <img src="projeto-2.jpg" alt="Exemplo de Escada Metálica">
+                <img src="IMG-20251213-WA0005.jpg" alt="Exemplo de Grade de Segurança">
+            </div>
+            <a href="#contactos" class="btn" style="margin-top: 30px;">Ver Mais Fotos (Em Breve)</a>
+        </div>
+    </section>
+
+    <footer id="contactos">
+        <div class="container">
+            <h3>Contacte-nos Hoje</h3>
+            
+            <div class="contact-content">
+                
+                <div class="contact-info">
+                    <h4>Informação Geral</h4>
+                    <p>Está pronto para começar o seu projeto em metal? Fale connosco, estamos disponíveis de 2ª a 6ª feira.</p>
+                    <p><strong>Telefone:</strong> [+2389528129
+                    ]</p>
+                    <p><strong>WhatsApp:</strong> [
+                    WhatsApp]</p>
+                    <p><strong>Email:</strong> [Seu Email Profissional]</p>
+                    <p><strong>Sede:</strong> [Sua Morada ou Área de Atendimento Principal]</p>
+                </div>
+                
+                <div class="contact-form-box" id="orcamento">
+                    <h4>Pedido de Orçamento Rápido</h4>
+                    <form action="submit_orcamento.php" method="POST">
+                        <input type="text" name="nome" placeholder="Seu Nome Completo" required>
+                        <input type="email" name="email" placeholder="Seu Email" required>
+                        <input type="text" name="telefone" placeholder="Telefone" required>
+                        <textarea name="detalhes" placeholder="Descreva brevemente o serviço que precisa (Ex: Portão de 3m, Grade para 2 janelas)" required></textarea>
+                        <button type="submit" class="btn">Enviar Pedido de Orçamento</button>
+                    </form>
+                </div>
+                
+            </div>
+            
+            <p class="copyright">
+                &copy; 2025 Metal Forte Serralharia. Todos os direitos reservados.
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>
+
